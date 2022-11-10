@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/PaperNote.cs" type="Script" id=1]
+[ext_resource path="res://assets/CoolTheme.tres" type="Theme" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NoteBody:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NoteBody:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 44.0001, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_paper"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("NoteBody:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("NoteBody:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 605, -0.25, 0, 0, -633.224, 44, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="PaperNote" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="NoteBody" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -256.0
+margin_right = 200.0
+margin_bottom = 256.0
+
+[node name="PaperColor" type="ColorRect" parent="NoteBody"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.54902, 0.54902, 0.537255, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="NoteBody/PaperColor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -208.0
+margin_right = 132.0
+margin_bottom = 208.0
+
+[node name="Label" type="Label" parent="NoteBody/PaperColor/MarginContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 264.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/show_paper = SubResource( 2 )

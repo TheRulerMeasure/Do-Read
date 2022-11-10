@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/ItemNote.cs" type="Script" id=1]
+[ext_resource path="res://scenes/objects/UI/PaperNote.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="ItemNote" type="Area2D" groups=["item"]]
+monitoring = false
+script = ExtResource( 1 )
+PaperNotePacked = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 10, -9, -2, -12, -13, 4, 2, 8 )

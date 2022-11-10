@@ -1,0 +1,56 @@
+[gd_resource type="Theme" load_steps=12 format=2]
+
+[ext_resource path="res://assets/5inq_-_PixAntiqua.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.25098, 0.313726, 0.25098, 1 )
+skew = Vector2( 0.5, 0 )
+border_width_left = 6
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.4, 0.443137, 0.454902, 1 )
+skew = Vector2( 0.09, 0.007 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.419608, 0.454902, 0.443137, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.482353, 0.698039, 0.623529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.34902, 0.388235, 0.384314, 1 )
+
+[resource]
+Button/fonts/font = SubResource( 2 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = SubResource( 5 )
+Button/styles/normal = SubResource( 3 )
+CheckButton/styles/normal = SubResource( 6 )
+CheckButton/styles/pressed = SubResource( 7 )
+HSlider/styles/grabber_area = SubResource( 9 )
+HSlider/styles/slider = SubResource( 10 )
+Label/fonts/font = SubResource( 1 )
+Tabs/styles/button = SubResource( 8 )

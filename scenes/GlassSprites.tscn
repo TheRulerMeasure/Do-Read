@@ -1,0 +1,143 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/g3.png" type="Texture" id=1]
+
+[node name="GlassSprites" type="Node2D"]
+
+[node name="Hip" type="Sprite" parent="."]
+position = Vector2( -4, -68 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -10 )
+region_enabled = true
+region_rect = Rect2( 48, 44, 25, 33 )
+
+[node name="LeftThigh" type="Sprite" parent="Hip"]
+position = Vector2( 4, 0 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( 0, 14 )
+region_enabled = true
+region_rect = Rect2( 6, 85, 15, 38 )
+
+[node name="LeftCalf" type="Sprite" parent="Hip/LeftThigh"]
+position = Vector2( 2, 30 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 13 )
+region_enabled = true
+region_rect = Rect2( 28, 86, 10, 36 )
+
+[node name="LeftFoot" type="Sprite" parent="Hip/LeftThigh/LeftCalf"]
+position = Vector2( -2, 30 )
+texture = ExtResource( 1 )
+offset = Vector2( 2.975, 2.101 )
+region_enabled = true
+region_rect = Rect2( 45, 86, 15, 10 )
+
+[node name="RightThigh" type="Sprite" parent="Hip"]
+position = Vector2( -4, 0 )
+z_index = 1
+texture = ExtResource( 1 )
+offset = Vector2( 0, 14 )
+region_enabled = true
+region_rect = Rect2( 6, 85, 15, 38 )
+
+[node name="RightCalf" type="Sprite" parent="Hip/RightThigh"]
+position = Vector2( 2, 30 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 13 )
+region_enabled = true
+region_rect = Rect2( 28, 86, 10, 36 )
+
+[node name="RightFoot" type="Sprite" parent="Hip/RightThigh/RightCalf"]
+position = Vector2( -2, 30 )
+texture = ExtResource( 1 )
+offset = Vector2( 2.975, 2.101 )
+region_enabled = true
+region_rect = Rect2( 45, 86, 15, 10 )
+
+[node name="Torso" type="Sprite" parent="Hip"]
+position = Vector2( 4, -28 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -8 )
+region_enabled = true
+region_rect = Rect2( 54, 8, 19, 32 )
+
+[node name="LeftUpperArm" type="Sprite" parent="Hip/Torso"]
+position = Vector2( 4, -16 )
+z_index = -2
+texture = ExtResource( 1 )
+offset = Vector2( 0, 8 )
+region_enabled = true
+region_rect = Rect2( 7, 50, 10, 25 )
+
+[node name="LeftLowerArm" type="Sprite" parent="Hip/Torso/LeftUpperArm"]
+position = Vector2( 0, 18 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 13 )
+region_enabled = true
+region_rect = Rect2( 20, 50, 6, 30 )
+
+[node name="LeftHand" type="Sprite" parent="Hip/Torso/LeftUpperArm/LeftLowerArm"]
+position = Vector2( 0, 26 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 2 )
+region_enabled = true
+region_rect = Rect2( 31, 51, 7, 7 )
+
+[node name="RightUpperArm" type="Sprite" parent="Hip/Torso"]
+position = Vector2( -6, -12 )
+z_index = 2
+texture = ExtResource( 1 )
+offset = Vector2( 0, 8 )
+region_enabled = true
+region_rect = Rect2( 7, 50, 10, 25 )
+
+[node name="RightLowerArm" type="Sprite" parent="Hip/Torso/RightUpperArm"]
+position = Vector2( 0, 18 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 13 )
+region_enabled = true
+region_rect = Rect2( 20, 50, 6, 30 )
+
+[node name="RightHand" type="Sprite" parent="Hip/Torso/RightUpperArm/RightLowerArm"]
+position = Vector2( 0, 26 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 2 )
+region_enabled = true
+region_rect = Rect2( 31, 51, 7, 7 )
+
+[node name="Head" type="Sprite" parent="Hip/Torso"]
+position = Vector2( -2, -24 )
+texture = ExtResource( 1 )
+offset = Vector2( 2, -15 )
+region_enabled = true
+region_rect = Rect2( 6, 3, 31, 34 )
+
+[node name="HairLeft" type="Sprite" parent="Hip/Torso/Head"]
+position = Vector2( 14, -18 )
+z_index = -1
+texture = ExtResource( 1 )
+offset = Vector2( 2, 8 )
+region_enabled = true
+region_rect = Rect2( 78, 79, 17, 30 )
+
+[node name="HairRight" type="Sprite" parent="Hip/Torso/Head"]
+position = Vector2( -7, -20 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 7.984 )
+region_enabled = true
+region_rect = Rect2( 76, 35, 23, 37 )
+
+[node name="Eyes" type="Sprite" parent="Hip/Torso/Head"]
+position = Vector2( 7, -19 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 7.984 )
+region_enabled = true
+region_rect = Rect2( 104, 8, 25, 15 )
+
+[node name="HairFront" type="Sprite" parent="Hip/Torso/Head"]
+position = Vector2( 6, -22 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 7.984 )
+region_enabled = true
+region_rect = Rect2( 79, 5, 11, 22 )
