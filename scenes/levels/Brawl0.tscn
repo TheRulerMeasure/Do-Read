@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/objects/Crate.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/CrateBig.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Orge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/objects/InfoBGMusic.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/objects/ItemHealth.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,6 +29,9 @@ extents = Vector2( 34, 48 )
 extents = Vector2( 10, 32 )
 
 [node name="Brawl0" type="Node"]
+
+[node name="InfoBGMusic" parent="." instance=ExtResource( 11 )]
+Music = 2
 
 [node name="World2D" type="Node2D" parent="."]
 
@@ -378,6 +382,7 @@ shape = SubResource( 4 )
 position = Vector2( 4064, 3200 )
 NewLevel = "res://scenes/levels/Brawl1.tscn"
 exitPathName = "World2D/YSort/OB/BackApp"
+TargetPaths = [ NodePath("../../InfoBGMusic") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetects/TriggerChangeLevel"]
 shape = SubResource( 3 )

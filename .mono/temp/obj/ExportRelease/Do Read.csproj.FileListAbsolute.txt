@@ -1,0 +1,9 @@
+D:\dev\Do Read\.mono\temp\bin\ExportRelease\Do Read.dll
+D:\dev\Do Read\.mono\temp\bin\ExportRelease\Do Read.pdb
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.csproj.AssemblyReference.cache
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.AssemblyInfoInputs.cache
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.AssemblyInfo.cs
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.csproj.CoreCompileInputs.cache
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.dll
+D:\dev\Do Read\.mono\temp\obj\ExportRelease\Do Read.pdb

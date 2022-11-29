@@ -1,0 +1,28 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": -1,
+            "image_right": -1,
+            "name": "...",
+            "text": "Ending 1/1.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": -1,
+            "image_right": -1,
+            "name": "...",
+            "text": "Escaped.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": -1,
+            "image_right": -1,
+            "name": "...",
+            "text": "Thank you for playing!",
+            "char_delay": 0.06
+        }
+    ]
+}

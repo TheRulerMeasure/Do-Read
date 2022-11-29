@@ -28,7 +28,7 @@ public class GameGlobal : Node
     private GDColl.Array<NodePath> _deadEnemyPaths = new GDColl.Array<NodePath>();
     private GDColl.Array<NodePath> _deadCratePaths = new GDColl.Array<NodePath>();
     private GDColl.Array<NodePath> _triggeredInfoDestroyPaths = new GDColl.Array<NodePath>();
-    private GDColl.Array<NodePath> _disposedNodePaths = new GDColl.Array<NodePath>();
+    // private GDColl.Array<NodePath> _disposedNodePaths = new GDColl.Array<NodePath>();
     private bool _enteredLevel = false;
     private PackedScene _playerPacked;
     private string _curDeplayPath;
@@ -71,11 +71,11 @@ public class GameGlobal : Node
         healthIndi.SetLevel(criticalLevel);
     }
 
-    public void InitDisposible(NodePath path)
-    {
-        if (!_disposedNodePaths.Contains(path)) return;
-        GetNode(path).QueueFree();
-    }
+    // public void InitDisposible(NodePath path)
+    // {
+    //     if (!_disposedNodePaths.Contains(path)) return;
+    //     GetNode(path).QueueFree();
+    // }
 
     public void InitPlayer(Play player)
     {
@@ -235,11 +235,11 @@ public class GameGlobal : Node
         _triggeredInfoDestroyPaths.Add(path);
     }
 
-    private void _OnNodeDisposed(NodePath path)
-    {
-        if (_disposedNodePaths.Contains(path)) return;
-        _disposedNodePaths.Add(path);
-    }
+    // private void _OnNodeDisposed(NodePath path)
+    // {
+    //     if (_disposedNodePaths.Contains(path)) return;
+    //     _disposedNodePaths.Add(path);
+    // }
 
     private void _OnPlayerDied()
     {
@@ -252,7 +252,12 @@ public class GameGlobal : Node
         _RespawnPlayer();
     }
 
-    private void PlayMusic(int musicIndex)
+    private void _OnMusicPlayMusic(int musicIndex)
+    {
+        _PlayMusic(musicIndex);
+    }
+
+    private void _PlayMusic(int musicIndex)
     {
         if (musicIndex == 0)
         {
@@ -260,7 +265,25 @@ public class GameGlobal : Node
             GetNode<AudioStreamPlayer>("Music1").Play();
             return;
         }
+        if (musicIndex == 1)
+        {
+            GetNode<AudioStreamPlayer>("Music1").Stop();
+            GetNode<AudioStreamPlayer>("Music2").Play();
+            return;
+        }
         GetNode<AudioStreamPlayer>("Music1").Stop();
-        GetNode<AudioStreamPlayer>("Music2").Play();
+        GetNode<AudioStreamPlayer>("Music2").Stop();
+    }
+
+    private void _OnResetData()
+    {
+        PlayerHealth = 5;
+        PlayerMaxHealth = 10;
+        PlayerHasWeapon = false;
+        _keys.Clear();
+        _searchedItemPaths.Clear();
+        _deadEnemyPaths.Clear();
+        _deadCratePaths.Clear();
+        _triggeredInfoDestroyPaths.Clear();
     }
 }

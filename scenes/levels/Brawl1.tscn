@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://scenes/objects/Orge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/InfoDestroy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/objects/InfoResetData.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/objects/item/ItemNote.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/spritesheet/paper_packed.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 47, 47 )
@@ -24,7 +28,12 @@ extents = Vector2( 32, 64 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 48, 88 )
+
 [node name="Brawl1" type="Node"]
+
+[node name="InfoResetData" parent="." instance=ExtResource( 11 )]
 
 [node name="InfoDestroy" parent="." instance=ExtResource( 9 )]
 ObjectsToBeDestroyed = [ NodePath("../Wall/DocBlock"), NodePath("../AreaDetects/Confront"), NodePath("../Wall/ExitBlock") ]
@@ -171,6 +180,20 @@ position = Vector2( 704, 592 )
 [node name="Orge16" parent="World2D/YSort/OB/Orge" instance=ExtResource( 7 )]
 position = Vector2( 576, 512 )
 
+[node name="Press [X] to interact" parent="World2D/YSort/OB" instance=ExtResource( 12 )]
+position = Vector2( 768, 336 )
+Text = "Wherever you are. I won't forgive you for this.
+
+So much anger.
+I wish I am here with you, strangling you with my bear hands.
+
+Even in death. I will continue to harm you in every way possible."
+
+[node name="Sprite" type="Sprite" parent="World2D/YSort/OB/Press [X] to interact"]
+texture = ExtResource( 13 )
+hframes = 5
+frame = 2
+
 [node name="Wall" type="Node2D" parent="."]
 
 [node name="BB" type="StaticBody2D" parent="Wall"]
@@ -226,5 +249,14 @@ DialogFile = "res://assets/dialog_data/tar_check.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetects/Wellness Check"]
 shape = SubResource( 3 )
+
+[node name="TriggerChangeLevel" parent="AreaDetects" instance=ExtResource( 10 )]
+position = Vector2( 144, 1632 )
+NewLevel = "res://scenes/levels/GameEndLevel.tscn"
+exitPathName = "World2D/YSort/OB/SirBig"
+TargetPaths = [ NodePath("../../InfoResetData") ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetects/TriggerChangeLevel"]
+shape = SubResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 2 )]

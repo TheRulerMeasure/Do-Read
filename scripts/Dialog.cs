@@ -74,6 +74,7 @@ public class Dialog : Control
 
     private void _AScript()
     {
+        var name = (string) ((GDColl.Dictionary)  _dialogs[_curDialogIndex])["name"];
         var focusLeft = (bool) ((GDColl.Dictionary)  _dialogs[_curDialogIndex])["focus_left"];
         var imageLeft = ((GDColl.Dictionary)  _dialogs[_curDialogIndex])["image_left"];
         var imageLeftNum = (int) GD.Convert(imageLeft, Variant.Type.Int);
@@ -81,7 +82,7 @@ public class Dialog : Control
         var imageRightNum = (int) GD.Convert(imageRight, Variant.Type.Int);
         var text = (string) ((GDColl.Dictionary)  _dialogs[_curDialogIndex])["text"];
         var delay = (float) ((GDColl.Dictionary)  _dialogs[_curDialogIndex])["char_delay"];
-        _Display(text, focusLeft, imageLeftNum, imageRightNum, delay);
+        _Display(text, name, focusLeft, imageLeftNum, imageRightNum, delay);
     }
 
     private void _SpritePop(Sprite sp, bool focus)
@@ -110,7 +111,28 @@ public class Dialog : Control
         tween.Start();
     }
 
-    private void _Display(string text, bool focusLeft, int imageLeft, int imageRight, float charDelay=0.05f)
+    private void _TellName(string name, bool focusLeft)
+    {
+        Label nameLabel;
+        NinePatchRect patch;
+        if (focusLeft)
+        {
+            GetNode<NinePatchRect>("Node2D/Control/NameRight/Patch").Visible = false;
+            patch = GetNode<NinePatchRect>("Node2D/Control/NameLeft/Patch");
+            patch.Visible = true;
+            nameLabel = GetNode<Label>("Node2D/Control/NameLeft/Patch/MarginContainer/Label");
+        }
+        else
+        {
+            GetNode<NinePatchRect>("Node2D/Control/NameLeft/Patch").Visible = false;
+            patch = GetNode<NinePatchRect>("Node2D/Control/NameRight/Patch");
+            patch.Visible = true;
+            nameLabel = GetNode<Label>("Node2D/Control/NameRight/Patch/MarginContainer/Label");
+        }
+        nameLabel.Text = name;
+    }
+
+    private void _Display(string text, string name, bool focusLeft, int imageLeft, int imageRight, float charDelay=0.05f)
     {
         if (imageLeft >= 0 && imageLeft <= 3)
         {
@@ -141,6 +163,7 @@ public class Dialog : Control
             var sp = GetNode<Sprite>("PosRight/Sprite");
             sp.Visible = false;
         }
+        _TellName(name, focusLeft);
 
         var label = GetNode<Label>("Node2D/Control/NinePatchRect/MarginContainer/Label");
         label.Text = text;

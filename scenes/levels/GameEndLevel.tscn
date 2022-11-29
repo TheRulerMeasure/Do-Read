@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/objects/DoubleDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/spritesheet/paper_packed.png" type="Texture" id=4]
+[ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 17 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 10 )
+
+[node name="GameEndLevel" type="Node"]
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="Maps" type="YSort" parent="World2D"]
+
+[node name="Floors" type="TileMap" parent="World2D/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 2, 0, 655389, 2, 0, 655390, 2, 0, 655391, 2, 0, 655392, 2, 0, 655393, 0, 0, 655400, 0, 0, 655405, 0, 0, 655406, 0, 0, 655407, 0, 0, 655408, 0, 0, 655409, 0, 0, 655410, 0, 0, 655411, 0, 0, 655412, 0, 0, 655413, 0, 0, 655414, 0, 0, 655415, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 2, 0, 720920, 2, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720931, 2, 0, 720937, 0, 0, 720939, 2, 0, 720940, 0, 0, 720943, 0, 0, 720944, 2, 0, 720945, 0, 0, 720946, 2, 0, 720947, 2, 0, 720948, 2, 0, 720949, 0, 0, 720950, 0, 0, 720951, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 2, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 2, 0, 786476, 0, 0, 786478, 0, 0, 786479, 0, 0, 786480, 0, 0, 786481, 0, 0, 786482, 0, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786487, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="World2D/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 458772, 3, 0, 458773, 3, 1, 458774, 3, 2, 458778, 3, 0, 458779, 3, 2, 458798, 3, 0, 458799, 3, 1, 458800, 3, 1, 458801, 3, 1, 458802, 3, 1, 458803, 3, 1, 458804, 3, 1, 458805, 3, 1, 458806, 3, 1, 458807, 3, 2, 524308, 3, 65536, 524309, 3, 65537, 524310, 3, 65538, 524314, 3, 65536, 524315, 3, 65538, 524334, 3, 65536, 524335, 3, 65537, 524336, 3, 65537, 524337, 3, 65537, 524338, 3, 65537, 524339, 3, 65537, 524340, 3, 65537, 524341, 3, 65537, 524342, 3, 65537, 524343, 3, 65538, 589844, 3, 131072, 589845, 3, 131073, 589846, 3, 131074, 589850, 3, 131072, 589851, 3, 131074, 589870, 3, 131072, 589871, 3, 131073, 589872, 3, 131073, 589873, 3, 131073, 589874, 3, 131073, 589875, 3, 131073, 589876, 3, 131073, 589877, 3, 131073, 589878, 3, 131073, 589879, 3, 131074 )
+
+[node name="Walls2" type="TileMap" parent="World2D/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="YSort" type="YSort" parent="World2D"]
+
+[node name="OB" type="YSort" parent="World2D/YSort"]
+
+[node name="SirBig" type="Position2D" parent="World2D/YSort/OB"]
+position = Vector2( 1744, 368 )
+
+[node name="DoubleDoor" parent="World2D/YSort/OB" instance=ExtResource( 2 )]
+position = Vector2( 784, 296 )
+
+[node name="Ending" parent="World2D/YSort/OB" instance=ExtResource( 3 )]
+position = Vector2( 1216, 336 )
+DialogFile = "res://assets/dialog_data/thankyou.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/YSort/OB/Ending"]
+shape = SubResource( 1 )
+
+[node name="PaperPacked" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 1216, 272 )
+texture = ExtResource( 4 )
+hframes = 5
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PoolVector2Array( 640, 224, 640, 416, 1792, 416, 1792, 224, 1472, 224, 1472, 320, 896, 320, 896, 128, 1856, 128, 1856, 448, 576, 448, 576, 224 )
+
+[node name="AreaDetects" type="Node2D" parent="."]
+
+[node name="TriggerChangeLevel" parent="AreaDetects" instance=ExtResource( 5 )]
+position = Vector2( 784, 272 )
+NewLevel = "res://scenes/levels/LvlMenu.tscn"
+exitPathName = "World2D/YSort/OB/MenuBack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetects/TriggerChangeLevel"]
+shape = SubResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 6 )]

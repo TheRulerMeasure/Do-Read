@@ -207,7 +207,7 @@ texture = ExtResource( 6 )
 [node name="Papers" type="YSort" parent="World2D/YSort/OB"]
 
 [node name="Crumpled Paper" parent="World2D/YSort/OB/Papers" instance=ExtResource( 9 )]
-position = Vector2( 1016, 440 )
+position = Vector2( 1008, 400 )
 Text = "Warden won't open the door. I wonder what's going on in there.
 
 I tried knocking the door and he's not answering. I will have to break open the door."

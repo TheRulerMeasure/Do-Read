@@ -76,6 +76,88 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 autowrap = true
 
+[node name="NameLeft" type="Control" parent="Node2D/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -136.0
+margin_top = -108.0
+margin_right = -96.0
+margin_bottom = -68.0
+
+[node name="Patch" type="NinePatchRect" parent="Node2D/Control/NameLeft"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -14.0
+margin_right = 34.0
+margin_bottom = 14.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D/Control/NameLeft/Patch"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.0
+margin_top = -12.0
+margin_right = 28.0
+margin_bottom = 12.0
+
+[node name="Label" type="Label" parent="Node2D/Control/NameLeft/Patch/MarginContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 19.0
+
+[node name="NameRight" type="Control" parent="Node2D/Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 84.0
+margin_top = -108.0
+margin_right = 124.0
+margin_bottom = -68.0
+
+[node name="Patch" type="NinePatchRect" parent="Node2D/Control/NameRight"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -34.0
+margin_top = -14.0
+margin_right = 34.0
+margin_bottom = 14.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D/Control/NameRight/Patch"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.0
+margin_top = -12.0
+margin_right = 28.0
+margin_bottom = 12.0
+
+[node name="Label" type="Label" parent="Node2D/Control/NameRight/Patch/MarginContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 5.0
+margin_right = 56.0
+margin_bottom = 19.0
+
 [node name="CharTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/objects/DoubleDoor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/raw/patientbed1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/objects/Orge.tscn" type="PackedScene" id=10]
 
@@ -21,7 +22,7 @@ extents = Vector2( 47, 10 )
 [node name="BB" type="StaticBody2D" parent="World2D/Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World2D/Walls/BB"]
-polygon = PoolVector2Array( 0, 32, 0, 320, 64, 320, 64, 472, 192, 472, 192, 320, 256, 320, 256, 832, 0, 832, 0, 1088, 1792, 1088, 1792, 32, 1568, 32, 1568, 0, 1632, 0, 1632, -448, 1408, -448, 1408, 0, 1472, 0, 1472, 32, 1344, 32, 1344, -512, 1920, -512, 1920, 1224, -64, 1224, -64, 32 )
+polygon = PoolVector2Array( 256, 32, 256, 832, 0, 832, 0, 1088, 1792, 1088, 1792, 32, 1568, 32, 1568, 0, 1632, 0, 1632, -448, 1408, -448, 1408, 0, 1472, 0, 1472, 32, 1344, 32, 1344, -512, 1920, -512, 1920, 1224, -64, 1224, -64, 32 )
 
 [node name="Roob" type="StaticBody2D" parent="World2D/Walls"]
 position = Vector2( 400, 608 )
@@ -106,6 +107,21 @@ position = Vector2( 1704, 288 )
 
 [node name="HuntBe" type="Position2D" parent="World2D/YSort/OB"]
 position = Vector2( 1520, -184 )
+
+[node name="Patientbed1" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 200, 312 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -30 )
+
+[node name="Patientbed2" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 192, 264 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -30 )
+
+[node name="Patientbed3" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 88, 240 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -30 )
 
 [node name="AreaDetects" type="Node2D" parent="World2D"]
 

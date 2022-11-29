@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
@@ -10,6 +10,13 @@
 [ext_resource path="res://assets/raw/patientbed2.png" type="Texture" id=8]
 [ext_resource path="res://scenes/objects/ItemHealth.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/Orge.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/objects/InfoBGMusic.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/objects/item/ItemNote.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/spritesheet/paper_packed.png" type="Texture" id=13]
+[ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/raw/blood_trace0.png" type="Texture" id=15]
+[ext_resource path="res://assets/raw/blood_trace.png" type="Texture" id=16]
+[ext_resource path="res://assets/raw/blood_trace2.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 368, 16 )
@@ -17,7 +24,12 @@ extents = Vector2( 368, 16 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 47, 10 )
 
+[sub_resource type="RectangleShape2D" id=3]
+
 [node name="Hall1" type="Node"]
+
+[node name="InfoBGMusic" parent="." instance=ExtResource( 11 )]
+Music = 2
 
 [node name="World2D" type="Node2D" parent="."]
 
@@ -71,6 +83,11 @@ position = Vector2( 1008, 816 )
 shape = SubResource( 2 )
 
 [node name="YSort" type="YSort" parent="World2D"]
+
+[node name="Sprite2" type="Sprite" parent="World2D/YSort"]
+position = Vector2( 696, 432 )
+texture = ExtResource( 13 )
+hframes = 5
 
 [node name="Maps" type="YSort" parent="World2D/YSort"]
 
@@ -229,6 +246,64 @@ position = Vector2( 728, 288 )
 [node name="Orge4" parent="World2D/YSort/OB/Enemies" instance=ExtResource( 10 )]
 position = Vector2( 1696, 544 )
 
+[node name="Notes" type="YSort" parent="World2D/YSort"]
+
+[node name="Badly written note" parent="World2D/YSort/Notes" instance=ExtResource( 12 )]
+position = Vector2( 904, 752 )
+Text = "Finally. I've done it.
+
+The clear acid.
+
+After my 10 minutes of work."
+
+[node name="Sprite" type="Sprite" parent="World2D/YSort/Notes/Badly written note"]
+texture = ExtResource( 13 )
+hframes = 5
+frame = 3
+
+[node name="Dirty note" parent="World2D/YSort/Notes" instance=ExtResource( 12 )]
+position = Vector2( 992, 768 )
+Text = "I can't describe this feeling.
+
+Why?
+What's wrong with me?
+
+The metal pipe.
+The metal pipe, I must have."
+
+[node name="Sprite" type="Sprite" parent="World2D/YSort/Notes/Dirty note"]
+texture = ExtResource( 13 )
+hframes = 5
+frame = 3
+
+[node name="Cleaned note" parent="World2D/YSort/Notes" instance=ExtResource( 12 )]
+position = Vector2( 1440, 688 )
+Text = "The clear acid is indeed a great medicine.
+
+Hundreds of patients were treated with clear acid yesterday.
+
+One of the recovered patient jumped out of the bed and held a metal pipe in her hand.
+She seems too happy as she doesn't want to let go of it."
+
+[node name="Sprite" type="Sprite" parent="World2D/YSort/Notes/Cleaned note"]
+texture = ExtResource( 13 )
+hframes = 5
+frame = 3
+
+[node name="Blood" type="YSort" parent="World2D/YSort"]
+
+[node name="BloodTrace0" type="Sprite" parent="World2D/YSort/Blood"]
+position = Vector2( 1016, 728 )
+texture = ExtResource( 15 )
+
+[node name="BloodTrace2" type="Sprite" parent="World2D/YSort/Blood"]
+position = Vector2( 1040, 768 )
+texture = ExtResource( 17 )
+
+[node name="BloodTrace" type="Sprite" parent="World2D/YSort/Blood"]
+position = Vector2( 1136, 768 )
+texture = ExtResource( 16 )
+
 [node name="AreaDetects" type="Node2D" parent="World2D"]
 
 [node name="TriggerChangeLevel" parent="World2D/AreaDetects" instance=ExtResource( 5 )]
@@ -243,8 +318,16 @@ shape = SubResource( 1 )
 position = Vector2( 1520, -376 )
 NewLevel = "res://scenes/levels/MadLab0.tscn"
 exitPathName = "World2D/YSort/OB/Pounce"
+TargetPaths = [ NodePath("../../../InfoBGMusic") ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/TriggerChangeLevel2"]
 shape = SubResource( 1 )
+
+[node name="Lab Label" parent="World2D/AreaDetects" instance=ExtResource( 14 )]
+position = Vector2( 696, 496 )
+DialogFile = "res://assets/dialog_data/bridge.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Lab Label"]
+shape = SubResource( 3 )
 
 [node name="UI" parent="." instance=ExtResource( 2 )]

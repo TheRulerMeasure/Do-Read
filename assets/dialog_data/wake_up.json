@@ -5,11 +5,11 @@
             "image_left": 3,
             "image_right": -1,
             "name": "Glass",
-            "text": "I'm already woken up!",
+            "text": "I'm already awake!",
             "char_delay": 0.06
         },
         {
-            "focus_left": false,
+            "focus_left": true,
             "image_left": 3,
             "image_right": -1,
             "name": "Glass",
@@ -17,7 +17,7 @@
             "char_delay": 0.06
         },
         {
-            "focus_left": false,
+            "focus_left": true,
             "image_left": 3,
             "image_right": -1,
             "name": "Glass",
