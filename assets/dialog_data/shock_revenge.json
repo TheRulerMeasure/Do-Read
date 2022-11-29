@@ -1,0 +1,52 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Those liars. They must pay.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Are you still thinking that someone is the cause of all this?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I wasn't feeling sick and you also weren't.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I already felt bad staying here at first and now people here holding a metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "...",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "You maybe right.",
+            "char_delay": 0.06
+        }
+    ]
+}

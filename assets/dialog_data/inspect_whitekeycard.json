@@ -1,0 +1,20 @@
+{
+    "dialogs": [
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "A white keycard!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I should try this with the door that has the same color.",
+            "char_delay": 0.06
+        }
+    ]
+}

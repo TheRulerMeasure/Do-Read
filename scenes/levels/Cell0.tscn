@@ -1,0 +1,173 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/cell_door_pack.png" type="Texture" id=4]
+[ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/raw/patientbed.png" type="Texture" id=6]
+[ext_resource path="res://scenes/objects/item/ItemNote.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/spritesheet/paper_packed.png" type="Texture" id=8]
+[ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/objects/InfoDestroy.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 122, 32 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32, 52 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 20, 24 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 22, 64 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Cell0" type="Node"]
+
+[node name="InfoDestroy" parent="." instance=ExtResource( 10 )]
+ObjectsToBeDestroyed = [ NodePath("../World2D/Walls/DoorBlock"), NodePath("../World2D/AreaDetects/WakeUp") ]
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="World2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World2D/Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World2D/Walls/StaticBody2D"]
+polygon = PoolVector2Array( 128, 160, 128, 352, 256, 352, 256, 432, 320, 432, 320, 352, 384, 352, 384, 224, 448, 224, 448, 512, 64, 512, 64, 160 )
+
+[node name="DoorBlock" type="StaticBody2D" parent="World2D/Walls"]
+position = Vector2( 256, 320 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Walls/DoorBlock"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World2D/Walls/DoorBlock"]
+position = Vector2( 16, -92 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World2D/Walls/DoorBlock"]
+position = Vector2( -52, -128 )
+shape = SubResource( 5 )
+
+[node name="BedBlock" type="StaticBody2D" parent="World2D/Walls"]
+position = Vector2( 152, 224 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Walls/BedBlock"]
+shape = SubResource( 6 )
+
+[node name="YSort" type="YSort" parent="World2D"]
+
+[node name="Maps" type="YSort" parent="World2D/YSort"]
+
+[node name="Floors" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 720904, 0, 0, 720905, 0, 0, 786440, 0, 0, 786441, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 4, 3, 0, 5, 3, 1, 6, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 2, 65540, 3, 65536, 65541, 3, 65537, 65542, 3, 65537, 65543, 3, 65537, 65544, 3, 65537, 65545, 3, 65538, 131076, 3, 65536, 131077, 3, 65537, 131078, 3, 65537, 131079, 3, 65537, 131080, 3, 65537, 131081, 3, 65538, 196612, 3, 65536, 196613, 3, 65537, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65538, 262148, 3, 131072, 262149, 3, 131073, 262150, 3, 131073, 262151, 3, 131073, 262152, 3, 131073, 262153, 3, 131074 )
+
+[node name="Walls2" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65546, 3, 0, 65547, 3, 2, 131082, 3, 65536, 131083, 3, 65538, 196618, 3, 65536, 196619, 3, 65538, 262154, 3, 65536, 262155, 3, 65538, 327690, 3, 65536, 327691, 3, 65538, 393226, 3, 131072, 393227, 3, 131074 )
+
+[node name="OB" type="YSort" parent="World2D/YSort"]
+
+[node name="CellDoor" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 288, 416 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -45 )
+hframes = 3
+
+[node name="CellIn" type="Position2D" parent="World2D/YSort/OB"]
+position = Vector2( 288, 360 )
+
+[node name="CellStart" type="Position2D" parent="World2D/YSort/OB"]
+position = Vector2( 208, 240 )
+
+[node name="Patientbed" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 160, 232 )
+texture = ExtResource( 6 )
+
+[node name="My Note3" parent="World2D/YSort/OB" instance=ExtResource( 7 )]
+position = Vector2( 352, 320 )
+Text = "I came back here with a pain in my arm.
+
+They told me I need to rest for 24 hours and then they will come and get me for further examine."
+
+[node name="PaperPacked" type="Sprite" parent="World2D/YSort/OB/My Note3"]
+texture = ExtResource( 8 )
+hframes = 5
+frame = 4
+
+[node name="My Note2" parent="World2D/YSort/OB" instance=ExtResource( 7 )]
+position = Vector2( 344, 296 )
+Text = "date
+
+I don't know the exact date anymore.
+
+I stopped counting since they told me we're not in May."
+
+[node name="PaperPacked" type="Sprite" parent="World2D/YSort/OB/My Note2"]
+texture = ExtResource( 8 )
+hframes = 5
+frame = 2
+
+[node name="My Note1" parent="World2D/YSort/OB" instance=ExtResource( 7 )]
+position = Vector2( 296, 248 )
+Text = "May 5th
+
+I hope I am cured soon.
+Strange, I wasn't feeling sick before.
+
+They injected clear acid in my arm and I started feeling dizzy after.."
+
+[node name="PaperPacked" type="Sprite" parent="World2D/YSort/OB/My Note1"]
+texture = ExtResource( 8 )
+hframes = 5
+frame = 2
+
+[node name="Doctor\'s Note" parent="World2D/YSort/OB" instance=ExtResource( 7 )]
+position = Vector2( 272, 184 )
+Text = "Subject 05 Medical Report
+
+The subject is treated with clear acid. The subject showing no sign of hunger but feeling dizzy. The clear acid will affect on the subject in next 24 hours.
+
+Doctor"
+
+[node name="PaperPacked" type="Sprite" parent="World2D/YSort/OB/Doctor\'s Note"]
+texture = ExtResource( 8 )
+hframes = 5
+frame = 3
+
+[node name="AreaDetects" type="Node2D" parent="World2D"]
+
+[node name="TriggerChangeLevel" parent="World2D/AreaDetects" instance=ExtResource( 5 )]
+position = Vector2( 288, 432 )
+NewLevel = "res://scenes/levels/Hall0.tscn"
+exitPathName = "World2D/YSort/OB/AHall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/TriggerChangeLevel"]
+shape = SubResource( 1 )
+
+[node name="WakeUp" parent="World2D/AreaDetects" instance=ExtResource( 9 )]
+position = Vector2( 208, 256 )
+LinkedObjects = [ NodePath("../../../InfoDestroy") ]
+DialogFile = "res://assets/dialog_data/wake_up.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/WakeUp"]
+shape = SubResource( 3 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]

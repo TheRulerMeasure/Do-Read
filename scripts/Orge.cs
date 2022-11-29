@@ -1,115 +1,22 @@
 using Godot;
+using GDColl = Godot.Collections;
 using System;
 
-public class Orge : KinematicBody2D
+public class Orge : GroundCharacter
 {
-    [Signal]
-    delegate void Died();
-    [Signal]
-    delegate void Hurt(int dmg);
-
     private bool _hitAreaDisabled = true;
 
-    private int _health = 3;
-
-    [Export]
-    private int MaxHealth = 3;
-    [Export]
-    public int Health {
-        get => _health;
-        set => _SetHealth(value);
-    }
-    [Export]
-    private float MaxSpeed = 97f;
-    [Export]
-    private float Acceleration = 360f;
     [Export]
     public bool HitAreaDisabled {
         get => _hitAreaDisabled;
         set => _SetHitAreaDisabled(value);
     }
-    private Vector2 _motion = Vector2.Zero;
-    private Player _player;
+    [Export]
+    private bool SaveToData = true;
 
-    public float Attack = 0f;
+    private GroundCharacter _groundTarget;
 
-    public float Stagger = 0f;
-
-    public override void _Ready()
-    {
-        var seekArea = GetNode<Area2D>("SeekArea");
-        seekArea.Connect("body_entered", this, nameof(_OnBodyEntered));
-        seekArea.Connect("body_exited", this, nameof(_OnBodyExited));
-        var hitArea = GetNode<Area2D>("HitArea");
-        hitArea.Connect("body_entered", this, nameof(_OnHitAreaBodyEntered));
-        // hitArea.Connect("body_exited", this, nameof(_OnHitAreaBodyExited));
-    }
-
-    public override void _PhysicsProcess(float delta)
-    {
-        var animTree = GetNode<AnimationTree>("AnimationTree");
-        var axis = Stagger > 0f || Attack > 0f ? Vector2.Zero : _GetAxisInput();
-
-        if (axis == Vector2.Zero)
-        {
-            if (Stagger > 0f)
-            {
-                animTree.Set("parameters/idle_walk/current", 0);
-            }
-            else if (Attack > 0f)
-            {
-                animTree.Set("parameters/movement_attack/current", 1);
-            }
-            else
-            {
-                animTree.Set("parameters/idle_walk/current", 0);
-            }
-            _ApplyFriction(Acceleration * delta);
-        }
-        else
-        {
-            _ApplyMovement(axis * Acceleration * delta);
-            animTree.Set("parameters/movement_attack/current", 0);
-            animTree.Set("parameters/idle_walk/current", 1);
-        }
-        _motion = MoveAndSlide(_motion);
-        Stagger -= delta;
-        if (Stagger < 0f) Stagger = 0f;
-        Attack -= delta;
-        if (Attack < 0f) Attack = 0f;
-    }
-
-    public void SetHealth(int health, bool lethal=true)
-    {
-        var oldHealth = Health;
-        Health = health;
-        // GD.Print(Name, Health);
-        if (!lethal) return;
-        EmitSignal(nameof(Hurt), oldHealth - health);
-        if (Health <= 0)
-        {
-            EmitSignal(nameof(Died));
-            QueueFree();
-            return;
-        }
-    }
-
-    public void Push(Vector2 dir, float force, float staggerAmount=0.5f)
-    {
-        Stagger += staggerAmount;
-        _motion += dir*force;
-        GetNode<Sprite>("Sprite").FlipH = dir.x > 0;
-        // GD.Print("Pushed");
-    }
-
-    private void _SetHealth(int health)
-    {
-        _health = health;
-        if (_health > MaxHealth)
-        {
-            _health = MaxHealth;
-        }
-    }
+    // private int _bugCount = 0;
 
     private void _SetHitAreaDisabled(bool v)
     {
@@ -127,80 +34,140 @@ public class Orge : KinematicBody2D
         r.Disabled = spriteFlipH;
     }
 
-    private Vector2 _GetAxisInput()
+    public override void _Ready()
     {
-        if (_player == null)
+        base._Ready();
+
+        Connect(nameof(StunChanged), this, nameof(_OnStunChanged));
+        Connect(nameof(Damaged), this, nameof(_OnDamaged));
+        Connect(nameof(Died), this, nameof(_OnDied));
+
+        GetNode<Timer>("DeathTimer").Connect("timeout", this, nameof(_OnDeathTimerTimeout));
+
+        var seekArea = GetNode<Area2D>("SeekArea");
+        seekArea.Connect("body_entered", this, nameof(_OnSeekAreaBodyEntered));
+        seekArea.Connect("body_exited", this, nameof(_OnSeekAreaBodyExited));
+        var hitArea = GetNode<Area2D>("HitArea");
+        hitArea.Connect("body_entered", this, nameof(_OnHitAreaBodyEntered));
+
+        if (!SaveToData) return;
+        var gg = GetNode<GameGlobal>("/root/GameGlobal");
+        gg.InitEnemy(this.GetPath());
+        var arr = new GDColl.Array();
+        arr.Add(this.GetPath());
+        Connect(nameof(Died), gg, "_OnEnemyDied", arr);
+    }
+
+    public override void _Process(float delta)
+    {
+        AxisInput = _SeekTargetPos(_groundTarget);
+
+        var animTree = GetNode<AnimationTree>("AnimationTree");
+        if (AxisInput.IsEqualApprox(Vector2.Zero))
         {
-            return Vector2.Zero;
-        }
-        Vector2 pos;
-        var sprite = GetNode<Sprite>("Sprite");
-        if (_player.Position.x > Position.x)
-        {
-            sprite.FlipH = false;
-            pos = GetNode<CollisionShape2D>("HitArea/RightCol").GlobalPosition;
+            animTree.Set("parameters/idle_walk/current", 0);
+            if (!GetNode<Timer>("AttackTimer").IsStopped())
+            {
+                animTree.Set("parameters/movement_attack/current", 1);
+            }
         }
         else
         {
-            sprite.FlipH = true;
-            pos = GetNode<CollisionShape2D>("HitArea/LeftCol").GlobalPosition;
+            animTree.Set("parameters/idle_walk/current", 1);
+            animTree.Set("parameters/movement_attack/current", 0);
         }
-        // GD.Print(pos.DistanceSquaredTo(_player.Position));
-        if (pos.DistanceSquaredTo(_player.Position) <= 1600)
+    }
+
+    private Vector2 _SeekTargetPos(GroundCharacter target)
+    {
+        if (!GetNode<Timer>("AttackTimer").IsStopped()) return Vector2.Zero;
+        if (target == null)
         {
-            if (Attack <= 0f)
-            {
-                Attack += 0.7f;
-            }
+            return Vector2.Zero;;
+        }
+        Vector2 pos;
+        var sprite = GetNode<Sprite>("Sprite");
+        if (target.Position.x > Position.x)
+        {
+            pos = GetNode<CollisionShape2D>("HitArea/RightCol").GlobalPosition;
+            sprite.FlipH = false;
+        }
+        else
+        {
+            pos = GetNode<CollisionShape2D>("HitArea/LeftCol").GlobalPosition;
+            sprite.FlipH = true;
+        }
+        if (pos.DistanceSquaredTo(target.Position) <= 1600)
+        {
+            _Attacking();
             return Vector2.Zero;
         }
-        return pos.DirectionTo(_player.Position);
+        return pos.DirectionTo(target.Position);
     }
 
-    private void _ApplyMovement(Vector2 acc)
+    private void _Attacking()
     {
-        _motion += acc;
-        _motion = _motion.LimitLength(MaxSpeed);
-    }
-
-    private void _ApplyFriction(float amount)
-    {
-        if (_motion.Length() > amount)
+        var timer = GetNode<Timer>("AttackTimer");
+        if (timer.IsStopped())
         {
-            _motion -= _motion.Normalized() * amount;
-            return;
-        }
-        _motion = Vector2.Zero;
-    }
-
-    private void _OnBodyEntered(Node body)
-    {
-        if (body.IsInGroup("player"))
-        {
-            _player = body as Player;
+            // AllowAxisInput = false;
+            timer.Start(0.7f);
         }
     }
 
-    private void _OnBodyExited(Node body)
+    private void _OnSeekAreaBodyEntered(Node body)
     {
-        if (body.IsInGroup("player"))
-        {
-            _player = null;
-        }
+        if (!body.IsInGroup("player")) return;
+        _groundTarget = body as GroundCharacter;
+    }
+
+    private void _OnSeekAreaBodyExited(Node body)
+    {
+        if (!body.IsInGroup("player")) return;
+        _groundTarget = null;
     }
 
     private void _OnHitAreaBodyEntered(Node body)
     {
-        if (body.IsInGroup("player"))
+        if (!body.IsInGroup("player")) return;
+        var player = body as GroundCharacter;
+        player.Stun();
+        player.Push(Position.DirectionTo(player.Position), 300f);
+        player.SetHealthLethal(player.Health - 1);
+    }
+
+    private void _OnStunChanged(bool stun)
+    {
+        var timer = GetNode<Timer>("AttackTimer");
+        if (!timer.IsStopped() && stun) GetNode<Timer>("AttackTimer").Stop();
+
+        var animTree = GetNode<AnimationTree>("AnimationTree");
+
+        if (stun)
         {
-            if (_player == null) return;
-            _player.SetHealth(_player.Health - 1);
-            _player.Push(Position.DirectionTo(_player.Position), 470f, 0.2f);
+            animTree.Set("parameters/idle_walk/current", 0);
         }
     }
 
-    // private void _OnHitAreaBodyExited(Node body)
-    // {
+    private void _OnDied()
+    {
+        var timer = GetNode<Timer>("DeathTimer");
+        if (!timer.IsStopped()) return;
+        SetPhysicsProcess(false);
+        SetProcess(false);
+        var animTree = GetNode<AnimationTree>("AnimationTree");
+        animTree.Set("parameters/alive_dead/current", 1);
 
-    // }
+        timer.Start();
+    }
+
+    private void _OnDeathTimerTimeout()
+    {
+        QueueFree();
+    }
+
+    private void _OnDamaged(int dmg)
+    {
+        GetNode<AudioStreamPlayer2D>("HurtSound").Play();
+    }
 }

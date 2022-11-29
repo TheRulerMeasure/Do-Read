@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/item/ItemKey.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/InfoDestroy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 24 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 24 )
+
+[node name="Warden" type="Node"]
+
+[node name="InfoDestroy" parent="." instance=ExtResource( 4 )]
+ObjectsToBeDestroyed = [ NodePath("../World2D/Walls/CardBlock"), NodePath("../World2D/AreaDetects/Inspect Keycard") ]
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="World2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World2D/Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World2D/Walls/StaticBody2D"]
+polygon = PoolVector2Array( 128, 160, 128, 352, 352, 352, 352, 288, 416, 288, 416, 352, 672, 352, 672, 288, 736, 288, 736, 224, 672, 224, 672, 160, 768, 160, 768, 392, 64, 384, 64, 160 )
+
+[node name="CardBlock" type="StaticBody2D" parent="World2D/Walls"]
+position = Vector2( 232, 264 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World2D/Walls/CardBlock"]
+polygon = PoolVector2Array( 120, -48, 16, -24, 16, 24, 120, 40, 120, 88, -72, 88, -72, -104, 120, -104 )
+
+[node name="YSort" type="YSort" parent="World2D"]
+
+[node name="Maps" type="YSort" parent="World2D/YSort"]
+
+[node name="Floors" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65540, 3, 0, 65541, 3, 1, 65542, 3, 1, 65543, 3, 1, 65544, 3, 1, 65545, 3, 1, 65546, 3, 2, 65549, 3, 0, 65550, 3, 1, 65551, 3, 1, 65552, 3, 1, 65553, 3, 1, 65554, 3, 1, 65555, 3, 1, 65556, 3, 2, 131076, 3, 65536, 131077, 3, 65537, 131078, 3, 65537, 131079, 3, 65537, 131080, 3, 65537, 131081, 3, 65537, 131082, 3, 65538, 131085, 3, 65536, 131086, 3, 65537, 131087, 3, 65537, 131088, 3, 65537, 131089, 3, 65537, 131090, 3, 65537, 131091, 3, 65537, 131092, 3, 65538, 196612, 3, 65536, 196613, 3, 65537, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65537, 196618, 3, 65538, 196621, 3, 65536, 196622, 3, 65537, 196623, 3, 65537, 196624, 3, 65537, 196625, 3, 65537, 196626, 3, 65537, 196627, 3, 65537, 196628, 3, 65538, 262148, 3, 131072, 262149, 3, 131073, 262150, 3, 131073, 262151, 3, 131073, 262152, 3, 131073, 262153, 3, 131073, 262154, 3, 131074, 262157, 3, 131072, 262158, 3, 131073, 262159, 3, 131073, 262160, 3, 131073, 262161, 3, 131073, 262162, 3, 131073, 262163, 3, 131073, 262164, 3, 131074 )
+
+[node name="Walls2" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196619, 3, 0, 196620, 3, 2, 262155, 3, 65536, 262156, 3, 65538, 327691, 3, 65536, 327692, 3, 65538, 393227, 3, 131072, 393228, 3, 131074 )
+
+[node name="OB" type="YSort" parent="World2D/YSort"]
+
+[node name="White Keycard" parent="World2D/YSort/OB" instance=ExtResource( 3 )]
+position = Vector2( 200, 264 )
+
+[node name="Polygon2D" type="Polygon2D" parent="World2D/YSort/OB/White Keycard"]
+polygon = PoolVector2Array( -10, -7, 10, -7, 10, 7, -10, 7 )
+
+[node name="InWarden" type="Position2D" parent="World2D/YSort/OB"]
+position = Vector2( 640, 256 )
+
+[node name="AreaDetects" type="Node2D" parent="World2D"]
+
+[node name="TriggerChangeLevel" parent="World2D/AreaDetects" instance=ExtResource( 5 )]
+position = Vector2( 736, 256 )
+NewLevel = "res://scenes/levels/Hall0.tscn"
+exitPathName = "World2D/YSort/OB/WardenEn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/TriggerChangeLevel"]
+shape = SubResource( 1 )
+
+[node name="Inspect Keycard" parent="World2D/AreaDetects" instance=ExtResource( 6 )]
+position = Vector2( 280, 264 )
+LinkedObjects = [ NodePath("../../../InfoDestroy") ]
+DialogFile = "res://assets/dialog_data/inspect_whitekeycard.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Inspect Keycard"]
+shape = SubResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]

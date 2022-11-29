@@ -1,0 +1,276 @@
+{
+    "dialogs": [
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Hello.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Get away from me!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Huh?.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I'm already beaten up.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Please. No more.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "You're one of them! A freak with a metal pipe!",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "No, I'm not going to hurt you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "And I'm not one of them.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "The metal pipe. It's just the only weapon I found around here.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I won't hurt you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Shock",
+            "text": "...",
+            "char_delay": 0.09
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Oh. I'm safe. phew.",
+            "char_delay": 0.08
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Can you tell me what happened?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I.. They took me back to my room after they gave me a shot.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I was resting and I heard something scary.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "They broke into my room and started to hurt me.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I ran away and found myself in this room. I tried to hide.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "One of them found me. And then you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "You're safe for now.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I wonder what's the cause of all this.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "They must've done this to us. Those doctors.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "They expected us to believe that they're curing us.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "We were their lab rats.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "So they weren't trying to help us.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I think I've seen you before.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "What's your name?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "My nickname?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Fine. What's your nick?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "... Shock.",
+            "char_delay": 0.1
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Did you just seriously came up with that?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "What about you?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Glass.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Oh hey. Thanks for saving my life Glass.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I... No problem.",
+            "char_delay": 0.06
+        }
+    ]
+}

@@ -12,12 +12,17 @@ public class FadeUI : Control
     {
         var tween = GetNode<Tween>("Tween");
         tween.Connect("tween_all_completed", this, nameof(_OnTweenAllCompleted));
-        // StartsFading(true);
+
+        var gg = GetNode<GameGlobal>("/root/GameGlobal");
+        gg.InitFadeUI(this.GetPath());
+        gg.Connect("FadeLevelChange", this, nameof(_OnFadeLevelChange));
     }
 
     public void StartsFading(bool fadeOut, float duration=0.9f)
     {
         var tween = GetNode<Tween>("Tween");
+        if (tween.IsActive()) tween.RemoveAll();
+
         var colorRect = GetNode<ColorRect>("ColorRect");
         if (fadeOut)
         {
@@ -46,5 +51,10 @@ public class FadeUI : Control
     private void _OnTweenAllCompleted()
     {
         EmitSignal(nameof(DoneFading), _fadeOut);
+    }
+
+    private void _OnFadeLevelChange(bool fadeOut)
+    {
+        StartsFading(fadeOut, 0.5f);
     }
 }

@@ -1,0 +1,36 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I'm already woken up!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Huh.. They said they would come and get me.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Do they allow me to walk freely now?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Anyway.",
+            "char_delay": 0.05
+        }
+    ]
+}

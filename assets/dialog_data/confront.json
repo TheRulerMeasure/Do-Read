@@ -1,0 +1,268 @@
+{
+    "dialogs": [
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Enough running!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "You tell me everything. Everything you know. Right now!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "I... We didn't do anything.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 0,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Are you going to start being honest or do you want to see me being a metal pipe freak?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "We just did what was right.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "You are mad! We didn't ask to hold a metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "And we didn't ask for clear acid.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": 3,
+            "name": "Dr. Tar",
+            "text": "We lied to you. Those were orange acid we gave you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Now that's... I don't know, but you lied to me.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "That's very nasty!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "Wait. Listen.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Do you think I would want anymore word from you?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "We cured some of you. We cured you too.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "The clear acid. It turns you into a metal pipe freak.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "We discovered it.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "Then we instade strated treating you with orange acid instead.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "...",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "What's the reason to lie?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "We don't know any of that.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "We lied to you and also we lied to him.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 0,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Him?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "Bridge. He..",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "He ordered us. To use the clear acid.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "I don't know what's gotten into him.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "We were rushing to cure all of you, but..",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "Those things already hold a metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "Bridge, if he isn't dead, I hope he got what's coming for him.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": -1,
+            "name": "Dr. Tar",
+            "text": "*Cough* *Cough*",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 0,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Doctor?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 0,
+            "image_right": 3,
+            "name": "Dr. Tar",
+            "text": "...",
+            "char_delay": 0.1
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Doctor?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Are you ok?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "...",
+            "char_delay": 0.06
+        }
+    ]
+}

@@ -34,7 +34,7 @@ public class ItemBag : Node
     private void _OnUseItem()
     {
         if (items.Count <= 0) return;
-        items[_itemIndex].Call("_OnUsed");
+        items[_itemIndex].Call("UseItem");
         _ItemLabel();
     }
 
@@ -58,13 +58,13 @@ public class ItemBag : Node
         var amount = items.Count > 1 ? "(" + items.Count + ")" : "";
         var name = item.Name;
         bool searched = false;
-        if (item.Get("IsSearched") != null)
+        if (item.Get("Searched") != null)
         {
-            searched = (bool) item.Get("IsSearched");
+            searched = (bool) item.Get("Searched");
         }
         if (searched)
         {
-            label.Text = amount + name + " (Searched)";
+            label.Text = amount + name + " (Used)";
             label.Modulate = _searchedColor;
             return;
         }

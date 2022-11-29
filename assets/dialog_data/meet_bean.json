@@ -1,0 +1,316 @@
+{
+    "dialogs": [
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Stay right there!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Uh, hello.",
+            "char_delay": 0.08
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Don't come closer you freak!",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Don't worry. I'm not going to hurt you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "You're one of them.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "No, I'm not.",
+            "char_delay": 0.1
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Don't lie to me.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "You're holding a metal pipe.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "I told you. I am not one of them.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I use this metal pipe for self defense.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I couldn't find anything else.",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "...",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I won't hurt you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Why did you threaten me?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "I wasn't!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "I didn't want to hurt anyone. I was just defending myself.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "This place become dangerous very sudden and I'm as terrified as you are.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Do you know what happened?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "This. All this. It was those crazy doctors.",
+            "char_delay": 0.08
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Doctors?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "They are the cause of all this.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "How do you know?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "The chemical he gave us. Most of us were suddenly holding a metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "There's no way a medical can turn this bad.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "They were experimenting chemical on us!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Made everyone hold a metal pipe!",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "How can you be so certain?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "What else can it be?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Hey. Uh..",
+            "char_delay": 0.1
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "What's your name? Maybe I would recognize you.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "You tell me your's first.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I.. My name's Glass",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "...",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "My name's Bean.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Nice to meet you Bean.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Can I have the keycard over there? I won't hurt you. I promise.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Do you also want to come with me?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "I'm not going out there.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Go ahead take the card.",
+            "char_delay": 0.06
+        }
+    ]
+}

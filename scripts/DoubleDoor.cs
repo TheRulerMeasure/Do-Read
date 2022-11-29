@@ -3,8 +3,13 @@ using System;
 
 public class DoubleDoor : Node2D
 {
+    // [Signal]
+    // delegate void Triggered(NodePath path);
+
     [Export]
-    private bool Openned = false;
+    private bool Locked = false;
+    [Export]
+    private Color DoorColor = Colors.White;
 
     public float TheSize1 {
         get => (float) GetNode<Sprite>("DoorLeft").Material.Get("shader_param/the_size");
@@ -18,12 +23,22 @@ public class DoubleDoor : Node2D
 
     public override void _Ready()
     {
-        var area = GetNode<Area2D>("Area2D");
-        area.Connect("body_entered", this, nameof(_OnBodyEntered));
-        area.Connect("body_exited", this, nameof(_OnBodyExited));
-        var animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        if (Openned) animPlayer.Play("open_idle");
-        else animPlayer.Play("close_idle");
+        GetNode<Sprite>("DoorLeft").Modulate = DoorColor;
+        GetNode<Sprite>("DoorRight").Modulate = DoorColor;
+
+        var area = GetNode<Area2D>("AboveFadeArea");
+        area.Connect("body_entered", this, nameof(_OnAboveFadeBodyEntered));
+        area.Connect("body_exited", this, nameof(_OnAboveFadeBodyExited));
+
+        var areaDoor = GetNode<Area2D>("AreaDoor");
+        areaDoor.Connect("body_entered", this, nameof(_OnAreaDoorBodyEntered));
+        areaDoor.Connect("body_exited", this, nameof(_OnAreaDoorBodyExited));
+
+        // var gg = GetNode<GameGlobal>("/root/GameGlobal");
+        // gg.InitDoubleDoor(this.GetPath());
+        // Connect(nameof(Triggered), gg, "_OnDoubleDoorTriggered");
+
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("close_idle");
     }
 
     public override void _Process(float delta)
@@ -50,10 +65,10 @@ public class DoubleDoor : Node2D
     {
         if (high)
         {
-            Open();
-            return;
+            Locked = false;
+            // EmitSignal(nameof(Triggered), GetPath());
+            // GD.Print("door high");
         }
-        Close();
     }
 
     private void _Blur(bool blurOut)
@@ -87,7 +102,7 @@ public class DoubleDoor : Node2D
         tween.Start();
     }
 
-    private void _OnBodyEntered(Node body)
+    private void _OnAboveFadeBodyEntered(Node body)
     {
         if (body.IsInGroup("player"))
         {
@@ -95,11 +110,29 @@ public class DoubleDoor : Node2D
         }
     }
 
-    private void _OnBodyExited(Node body)
+    private void _OnAboveFadeBodyExited(Node body)
     {
         if (body.IsInGroup("player"))
         {
             _Blur(false);
+        }
+    }
+
+    private void _OnAreaDoorBodyEntered(Node body)
+    {
+        if (body.IsInGroup("player"))
+        {
+            if (Locked) return;
+            Open();
+        }
+    }
+
+    private void _OnAreaDoorBodyExited(Node body)
+    {
+        if (body.IsInGroup("player"))
+        {
+            if (Locked) return;
+            Close();
         }
     }
 }

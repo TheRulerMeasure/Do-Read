@@ -1,57 +1,38 @@
 using Godot;
-using GDColl = Godot.Collections;
 using System;
 
-public class ItemKey : Area2D
+public class ItemKey : Item
 {
     [Signal]
-    delegate void Trigger(bool high);
-    [Signal]
-    delegate void Searched(bool searched, NodePath nodePath);
-    [Signal]
-    delegate void Init(NodePath nodePath);
-    [Signal]
-    delegate void AddKey(int keyIndex);
+    delegate void AddedKey(int index);
 
-    private bool _searched = false;
-
-    [Export]
-    private GDColl.Array<NodePath> TargetPaths;
-    [Export]
-    public bool IsSearched {
-        get => _searched;
-        set => _SetSearched(value);
-    }
     [Export]
     private int KeyIndex = 0;
 
     public override void _Ready()
     {
+        Connect(nameof(SearchChanged), this, nameof(_OnSearchChanged));
+        base._Ready();
+
+        // if (Searched)
+        // {
+        //     QueueFree();
+        //     return;
+        // }
+
         var gg = GetNode<GameGlobal>("/root/GameGlobal");
-        Connect(nameof(AddKey), gg, "_OnAddKey");
-        Connect(nameof(Searched), gg, "_OnNoteSearched");
-        Connect(nameof(Init), gg, "_OnItemNoteInit");
-        EmitSignal(nameof(Init), this.GetPath());
-
-        if (TargetPaths == null) return;
-        foreach (var item in TargetPaths)
-        {
-            Connect(nameof(Trigger), GetNode(item), "_OnTriggered");
-        }
+        Connect(nameof(AddedKey), gg, "_OnAddedKey");
     }
 
-    private void _SetSearched(bool searched)
+    public override void UseItem()
     {
-        _searched = searched;
-        EmitSignal(nameof(Searched), _searched, this.GetPath());
-        if (_searched) QueueFree();
+        EmitSignal(nameof(AddedKey), KeyIndex);
+        base.UseItem();
     }
 
-    private void _OnUsed()
+    private void _OnSearchChanged(bool searched, NodePath itemPath)
     {
-        if (IsSearched) return;
-        EmitSignal(nameof(AddKey), KeyIndex);
-        IsSearched = true;
-        EmitSignal(nameof(Trigger), true);
+        // GD.Print("key searched ", searched);
+        if (searched) QueueFree();
     }
 }

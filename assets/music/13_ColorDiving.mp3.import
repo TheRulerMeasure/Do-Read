@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/13_ColorDiving.mp3-8d7b1d9c97978d3eb8135f2aeedfcd5b.mp3str"
+
+[deps]
+
+source_file="res://assets/music/13_ColorDiving.mp3"
+dest_files=[ "res://.import/13_ColorDiving.mp3-8d7b1d9c97978d3eb8135f2aeedfcd5b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

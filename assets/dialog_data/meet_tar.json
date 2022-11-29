@@ -1,0 +1,132 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Hello.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "You look like a doctor.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Do you know what's going on?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "Who is this?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "Another metal pipe freak?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 0,
+            "name": "Glass",
+            "text": "Hey! I'm not one of them.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "There's nothing going on. Everything went as planned.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 0,
+            "name": "Glass",
+            "text": "What?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 0,
+            "name": "Glass",
+            "text": "What do you mean?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Do you see what I'm holding here?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "If there's nothing going on then what are those metal pipe freaks I fought?",
+            "char_delay": 0.05
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "The metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "Is the only thing.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "You need.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 0,
+            "name": "Dr. Tar",
+            "text": "To Survive.",
+            "char_delay": 0.2
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Hey come back here!",
+            "char_delay": 0.06
+        }
+    ]
+}

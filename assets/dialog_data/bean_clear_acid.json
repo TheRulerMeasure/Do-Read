@@ -1,0 +1,92 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "What did the doctor do to you?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "They told me that I'm having outer ear infection.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "And it's \"contagious\".",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "They didn't gave me a chance to check myself out.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "They are all liars.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "My ears. They're both fine.",
+            "char_delay": 0.08
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "Can I see them?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "No.",
+            "char_delay": 0.08
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "...",
+            "char_delay": 0.1
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "...",
+            "char_delay": 0.09
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Don't touch me.",
+            "char_delay": 0.06
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/blood_trace.png-452f543740544b30f97843d9396d4488.res"
+group_file="res://assets/.png"
+valid=true
+[deps]
+
+
+source_file="res://assets/raw/blood_trace.png"
+dest_files=[ "res://.import/blood_trace.png-452f543740544b30f97843d9396d4488.res" ]
+
+[params]
+
+atlas_file="res://assets/.png"
+import_mode=0
+crop_to_region=true
+trim_alpha_border_from_region=true

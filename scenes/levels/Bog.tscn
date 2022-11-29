@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Lab0TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/objects/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/item/ItemKey.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/Orge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/TriggerChangeLevel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/spritesheet/afiller_pack.png" type="Texture" id=6]
+[ext_resource path="res://scenes/objects/InfoDestroy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/InterDialog.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 64 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 24 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 45 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="Bog" type="Node"]
+
+[node name="InfoDestroy" parent="." instance=ExtResource( 7 )]
+ObjectsToBeDestroyed = [ NodePath("../World2D/Walls/CardBlock"), NodePath("../World2D/AreaDetects/Talk") ]
+
+[node name="World2D" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="World2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World2D/Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World2D/Walls/StaticBody2D"]
+polygon = PoolVector2Array( 96, 192, 96, 256, 160, 256, 160, 288, 0, 288, 0, 512, 352, 512, 352, 32, 160, 32, 160, 192, 96, 192, 96, -8, 384, -8, 384, 576, -64, 576, -64, 192 )
+
+[node name="CardBlock" type="StaticBody2D" parent="World2D/Walls"]
+position = Vector2( 128, 448 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/Walls/CardBlock"]
+shape = SubResource( 2 )
+
+[node name="YSort" type="YSort" parent="World2D"]
+
+[node name="Maps" type="YSort" parent="World2D/YSort"]
+
+[node name="Floors" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 2, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 2, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 524293, 0, 0, 524294, 2, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 2, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 2, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 2, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 2, 0, 851978, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 2, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65541, 3, 0, 65542, 3, 1, 65543, 3, 1, 65544, 3, 1, 65545, 3, 1, 65546, 3, 2, 131077, 3, 65536, 131078, 3, 65537, 131079, 3, 65537, 131080, 3, 65537, 131081, 3, 65537, 131082, 3, 65538, 196613, 3, 65536, 196614, 3, 65537, 196615, 3, 65537, 196616, 3, 65537, 196617, 3, 65537, 196618, 3, 65538, 262149, 3, 131072, 262150, 3, 131073, 262151, 3, 131073, 262152, 3, 131073, 262153, 3, 131073, 262154, 3, 131074 )
+
+[node name="Walls2" type="TileMap" parent="World2D/YSort/Maps"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 589824, 3, 0, 589825, 3, 1, 589826, 3, 1, 589827, 3, 1, 589828, 3, 2, 655360, 3, 65536, 655361, 3, 65537, 655362, 3, 65537, 655363, 3, 65537, 655364, 3, 65538, 720896, 3, 131072, 720897, 3, 131073, 720898, 3, 131073, 720899, 3, 131073, 720900, 3, 131074 )
+
+[node name="OB" type="YSort" parent="World2D/YSort"]
+
+[node name="Green Keycard" parent="World2D/YSort/OB" instance=ExtResource( 3 )]
+position = Vector2( 48, 488 )
+KeyIndex = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="World2D/YSort/OB/Green Keycard"]
+color = Color( 0.25098, 0.827451, 0.14902, 1 )
+polygon = PoolVector2Array( -5, -10, 11, -1, 4, 9, -10, 0 )
+
+[node name="Orge" parent="World2D/YSort/OB" instance=ExtResource( 4 )]
+position = Vector2( 232, 488 )
+
+[node name="InsideBog" type="Position2D" parent="World2D/YSort/OB"]
+position = Vector2( 192, 224 )
+
+[node name="Shock" type="Sprite" parent="World2D/YSort/OB"]
+position = Vector2( 40, 424 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -55.597 )
+hframes = 4
+
+[node name="AreaDetects" type="Node2D" parent="World2D"]
+
+[node name="TriggerChangeLevel" parent="World2D/AreaDetects" instance=ExtResource( 5 )]
+position = Vector2( 96, 224 )
+NewLevel = "res://scenes/levels/Hall0.tscn"
+exitPathName = "World2D/YSort/OB/BogHist"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/TriggerChangeLevel"]
+shape = SubResource( 1 )
+
+[node name="Talk" parent="World2D/AreaDetects" instance=ExtResource( 8 )]
+position = Vector2( 192, 448 )
+LinkedObjects = [ NodePath("../../../InfoDestroy") ]
+DialogFile = "res://assets/dialog_data/meet_shock.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Talk"]
+shape = SubResource( 3 )
+
+[node name="Wellness check" parent="World2D/AreaDetects" instance=ExtResource( 8 )]
+position = Vector2( 56, 416 )
+DialogFile = "res://assets/dialog_data/shock_hurt.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Wellness check"]
+shape = SubResource( 4 )
+
+[node name="Interact" parent="World2D/AreaDetects" instance=ExtResource( 8 )]
+position = Vector2( 56, 416 )
+DialogFile = "res://assets/dialog_data/shock_lockup.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Interact"]
+shape = SubResource( 4 )
+
+[node name="Judgement" parent="World2D/AreaDetects" instance=ExtResource( 8 )]
+position = Vector2( 56, 416 )
+DialogFile = "res://assets/dialog_data/shock_revenge.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Judgement"]
+shape = SubResource( 4 )
+
+[node name="Greets" parent="World2D/AreaDetects" instance=ExtResource( 8 )]
+position = Vector2( 56, 416 )
+DialogFile = "res://assets/dialog_data/shock_boygirl.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2D/AreaDetects/Greets"]
+shape = SubResource( 4 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]

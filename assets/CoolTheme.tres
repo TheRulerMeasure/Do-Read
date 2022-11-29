@@ -37,13 +37,14 @@ bg_color = Color( 0.729412, 0.729412, 0.729412, 1 )
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.85098, 0.85098, 0.85098, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.34902, 0.388235, 0.384314, 1 )
 
 [resource]
+default_font = SubResource( 11 )
 Button/fonts/font = SubResource( 2 )
 Button/styles/disabled = SubResource( 4 )
 Button/styles/focus = SubResource( 5 )
@@ -52,5 +53,5 @@ CheckButton/styles/normal = SubResource( 6 )
 CheckButton/styles/pressed = SubResource( 7 )
 HSlider/styles/grabber_area = SubResource( 9 )
 HSlider/styles/slider = SubResource( 10 )
-Label/fonts/font = SubResource( 1 )
+Label/fonts/font = SubResource( 11 )
 Tabs/styles/button = SubResource( 8 )

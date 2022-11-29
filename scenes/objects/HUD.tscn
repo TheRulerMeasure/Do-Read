@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/objects/UI/HealthIndi.tscn" type="PackedScene" id=1]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HealthIndi" parent="." instance=ExtResource( 1 )]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 64.0
+margin_bottom = 64.0

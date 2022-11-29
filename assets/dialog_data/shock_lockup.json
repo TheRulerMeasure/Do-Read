@@ -1,0 +1,60 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "Is your room in this area?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "Yes.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I do wonder why they lock us tight?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "We had a very small chance seeing other people.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "To prevent us from making other people sick too, I think.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "We're not sick.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "They're all liars.",
+            "char_delay": 0.06
+        }
+    ]
+}

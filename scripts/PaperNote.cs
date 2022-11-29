@@ -8,11 +8,13 @@ public class PaperNote : Control
     [Export(PropertyHint.MultilineText)]
     public string Label {
         get => label;
-        set => _GetLabel(value);
+        set => _SetLabel(value);
     }
 
     public override void _Ready()
     {
+        // var label = GetNode<Label>("NoteBody/PaperColor/LabelMargin/Label");
+        // label.RectPosition = new Vector2(268, 632);
         ShowPaper();
     }
 
@@ -24,6 +26,7 @@ public class PaperNote : Control
             Input.IsActionJustPressed("move_down") ||
             Input.IsActionJustPressed("interact_item"))
         {
+            // GD.Print("note Freed");
             this.QueueFree();
         }
     }
@@ -34,10 +37,10 @@ public class PaperNote : Control
         // GetNode<ColorRect>("NoteBody/PaperColor").Modulate = new Color(Colors.White, 1);
     }
 
-    private void _GetLabel(string v)
+    private void _SetLabel(string v)
     {
         this.label = v;
-        var label = GetNode<Label>("NoteBody/PaperColor/MarginContainer/Label");
+        var label = GetNode<Label>("NoteBody/PaperColor/LabelMargin/Label");
         label.Text = this.label;
     }
 }

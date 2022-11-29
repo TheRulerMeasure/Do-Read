@@ -1,0 +1,60 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "My arm's hurt. It makes me so uncomfortable.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "What did they do to you?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "They told me they gave me clear acid.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "I don't believe them.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "I also don't know if clear acid is safe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "It's not. Look at you. They made you hold a metal pipe.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "I told you. It's for self defense.",
+            "char_delay": 0.06
+        }
+    ]
+}

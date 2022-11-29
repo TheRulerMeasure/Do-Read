@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Female Monster Attacking.mp3-567dbeca064c75ab74d8d75cf2c1a0cd.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Female Monster Attacking.mp3"
+dest_files=[ "res://.import/Female Monster Attacking.mp3-567dbeca064c75ab74d8d75cf2c1a0cd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

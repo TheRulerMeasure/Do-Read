@@ -1,59 +1,36 @@
 using Godot;
 using System;
 
-public class ItemNote : Area2D
+public class ItemNote : Item
 {
-    [Signal]
-    delegate void Searched(bool searched, NodePath nodePath);
-    [Signal]
-    delegate void Init(NodePath nodePath);
-
-    private bool _searched = false;
-
     [Export(PropertyHint.MultilineText)]
     private string Text;
-    [Export]
-    private PackedScene PaperNotePacked;
-    [Export]
-    private NodePath GameUIPath;
+    // [Export]
+    // private NodePath NoteUIPath;
 
-    [Export]
-    public bool IsSearched {
-        get => _searched;
-        set => _SetSearched(value);
-    }
+    private PackedScene _paperNotePacked;
 
     public override void _Ready()
     {
-        var gg = GetNode<GameGlobal>("/root/GameGlobal");
-        Connect(nameof(Searched), gg, "_OnNoteSearched");
-        Connect(nameof(Init), gg, "_OnItemNoteInit");
-        EmitSignal(nameof(Init), this.GetPath());
+        base._Ready();
+
+        _paperNotePacked = ResourceLoader.Load<PackedScene>("res://scenes/objects/UI/PaperNote.tscn");
     }
 
-    private void _SetSearched(bool searched)
+    public override void UseItem()
     {
-        _searched = searched;
-        EmitSignal(nameof(Searched), _searched, this.GetPath());
+        _ShowNote();
+        base.UseItem();
     }
 
-    private void _OnUsed()
+    private void _ShowNote()
     {
-        _RequestSpawnNote();
-    }
-
-    private void _RequestSpawnNote()
-    {
-        if (GetNode(GameUIPath).GetChildCount() > 0) return;
-        _OnAllowSpawningNote();
-        IsSearched = true;
-    }
-
-    private void _OnAllowSpawningNote()
-    {
-        var paperNote = PaperNotePacked.Instance<PaperNote>();
+        // if (NoteUIPath == null) return;
+        if (Text == null) return;
+        var noteUI = GetTree().CurrentScene.GetNode("UI/NoteUI");
+        if (noteUI.GetChildCount() > 0) return;
+        var paperNote = _paperNotePacked.Instance<PaperNote>();
         paperNote.Label = Text;
-        paperNote.GetNode<Control>("NoteBody").RectPosition = new Vector2(200, 600);
-        GetNode(GameUIPath).AddChild(paperNote);
+        noteUI.AddChild(paperNote);
     }
 }

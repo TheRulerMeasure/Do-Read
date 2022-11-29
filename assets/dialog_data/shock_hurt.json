@@ -1,0 +1,60 @@
+{
+    "dialogs": [
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "How do you feel?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I feel terrible.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I thank you for saving my life.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": -1,
+            "name": "Shock",
+            "text": "I thought I wouldn't survive.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "No need to thank me.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 3,
+            "name": "Glass",
+            "text": "I just.. saved your life.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 2,
+            "image_right": 3,
+            "name": "Shock",
+            "text": "Ah. I'm a mess.",
+            "char_delay": 0.06
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Female Monster Growls.mp3-5ba4e36233e07b71b538ecee220a64b4.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Female Monster Growls.mp3"
+dest_files=[ "res://.import/Female Monster Growls.mp3-5ba4e36233e07b71b538ecee220a64b4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

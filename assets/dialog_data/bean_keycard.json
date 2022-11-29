@@ -1,0 +1,68 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Why do you have the keycard with you?",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "It wasn't with me. The keycard was here all along.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "How did find the way here?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Do you have any other keycards on you?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "No, I didn't have any keycard.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "I was just trying to hide from them. I came here from there.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "That's the way I came from.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": -1,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "I know the door opens when it finds keycard. But the door was already opened for me.",
+            "char_delay": 0.06
+        }
+    ]
+}

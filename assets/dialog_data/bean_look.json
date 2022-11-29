@@ -1,0 +1,60 @@
+{
+    "dialogs": [
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Hey.",
+            "char_delay": 0.07
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Hey, what?",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Glass",
+            "text": "...",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "...",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "You.. look nice.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": true,
+            "image_left": 3,
+            "image_right": -1,
+            "name": "Glass",
+            "text": "Thanks, you too.",
+            "char_delay": 0.06
+        },
+        {
+            "focus_left": false,
+            "image_left": 3,
+            "image_right": 1,
+            "name": "Bean",
+            "text": "Don't say that.",
+            "char_delay": 0.06
+        }
+    ]
+}
